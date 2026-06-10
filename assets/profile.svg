@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" role="img" aria-label="Foto profil (dummy)">
+  <rect width="480" height="600" fill="#EEECEA"/>
+  <circle cx="240" cy="225" r="120" fill="#D8D6D0"/>
+  <rect x="120" y="360" width="240" height="280" rx="120" fill="#D8D6D0"/>
+  <circle cx="240" cy="225" r="120" fill="none" stroke="#1A1A18" stroke-width="2" opacity="0.25"/>
+  <path d="M150 600 q90 -150 180 0" fill="#FF3C00" opacity="0.9"/>
+  <text x="240" y="560" font-family="Inter, sans-serif" font-size="20" font-weight="700"
+        fill="#888780" text-anchor="middle" letter-spacing="2">FOTO · DUMMY</text>
+</svg>

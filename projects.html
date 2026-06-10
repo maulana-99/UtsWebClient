@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — ilham</title>
+  <meta name="description" content="Karya pilihan Muhamad Ilham Maulana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Allura&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- cursor trail overlay -->
+  <canvas class="cursor-trail" aria-hidden="true"></canvas>
+
+  <!-- ===== Navbar (shared) ===== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="index.html" aria-label="ilham — beranda">ilham</a>
+      <nav aria-label="Utama">
+        <ul class="nav__links">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="projects.html">Project</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="work container">
+      <div class="work__head reveal d1">
+        <h1 class="work__title">Project</h1>
+        <span class="work__count">06 karya pilihan</span>
+      </div>
+
+      <ul class="ptable reveal d2" id="ptable">
+        <li class="ptable__head" aria-hidden="true">
+          <span class="c-num">№</span>
+          <span class="c-name">Project</span>
+          <span class="c-cat">Kategori</span>
+          <span class="c-year">Tahun</span>
+          <span class="c-go"></span>
+        </li>
+
+        <li>
+          <a class="prow" href="#" data-img="assets/project-1.svg">
+            <span class="c-num">01</span>
+            <span class="c-name">Aetherwave Identity</span>
+            <span class="c-cat">Identity</span>
+            <span class="c-year">2026</span>
+            <span class="c-go" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="prow" href="#" data-img="assets/project-2.svg">
+            <span class="c-num">02</span>
+            <span class="c-name">Nimbus Web App</span>
+            <span class="c-cat">Web App</span>
+            <span class="c-year">2025</span>
+            <span class="c-go" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="prow" href="#" data-img="assets/project-3.svg">
+            <span class="c-num">03</span>
+            <span class="c-name">Solstice Landing</span>
+            <span class="c-cat">Landing</span>
+            <span class="c-year">2025</span>
+            <span class="c-go" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="prow" href="#" data-img="assets/project-4.svg">
+            <span class="c-num">04</span>
+            <span class="c-name">Vertex Dashboard</span>
+            <span class="c-cat">Dashboard</span>
+            <span class="c-year">2024</span>
+            <span class="c-go" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="prow" href="#" data-img="assets/project-5.svg">
+            <span class="c-num">05</span>
+            <span class="c-name">Lumen Mobile</span>
+            <span class="c-cat">Mobile</span>
+            <span class="c-year">2024</span>
+            <span class="c-go" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="prow" href="#" data-img="assets/project-6.svg">
+            <span class="c-num">06</span>
+            <span class="c-name">Marigold Branding</span>
+            <span class="c-cat">Branding</span>
+            <span class="c-year">2023</span>
+            <span class="c-go" aria-hidden="true">&#8599;</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- floating image preview (follows cursor on row hover) -->
+  <div class="preview" id="preview" aria-hidden="true"><img src="assets/project-1.svg" alt="" /></div>
+
+  <!-- ===== Footer (shared) ===== -->
+  <footer class="foot">
+    <div class="container foot__inner">
+      <span class="foot__mark">ilham</span>
+      <span class="foot__meta">© 2026 Muhamad Ilham Maulana — Dibuat dengan teliti.</span>
+    </div>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
