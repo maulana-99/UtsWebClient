@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Allura&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/cursor.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -36,7 +37,8 @@
         <span class="work__count">06 karya pilihan</span>
       </div>
 
-      <ul class="ptable reveal d2" id="ptable">
+      <div class="work__content">
+        <ul class="ptable reveal d2" id="ptable">
         <li class="ptable__head" aria-hidden="true">
           <span class="c-num">№</span>
           <span class="c-name">Project</span>
@@ -105,11 +107,13 @@
           </a>
         </li>
       </ul>
+
+        <aside class="work__preview reveal d2">
+          <img id="preview-img" src="assets/project-1.svg" alt="Project preview" />
+        </aside>
+      </div>
     </section>
   </main>
-
-  <!-- floating image preview (follows cursor on row hover) -->
-  <div class="preview" id="preview" aria-hidden="true"><img src="assets/project-1.svg" alt="" /></div>
 
   <!-- ===== Footer (shared) ===== -->
   <footer class="foot">

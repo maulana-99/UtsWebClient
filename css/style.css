@@ -165,82 +165,74 @@ a:focus-visible, button:focus-visible {
 .foot__meta { font-size: .8rem; color: var(--aw-text-muted); letter-spacing: .04em; }
 
 /* =============================================================
-   HOME — hero
+   HOME — welcome
    ============================================================= */
-.hero {
+.welcome {
   min-height: calc(100svh - 76px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-block: clamp(3rem, 8vh, 7rem);
   position: relative;
+  text-align: center;
 }
-.hero__eyebrow { margin-bottom: 1.6rem; }
 
-.hero__title {
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 0.92;
-  font-size: clamp(3.4rem, 14vw, 11rem);
-  text-transform: uppercase;
-  color: var(--aw-text-primary);
-}
-.hero__title .dot { color: var(--aw-red); }
-
-/* flowing script line + animated brush stroke (signature element) */
-.hero__script {
-  position: relative;
-  display: inline-block;
+.welcome__text {
   font-family: var(--font-script);
-  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  font-size: clamp(4rem, 20vw, 12rem);
+  font-weight: 400;
   line-height: 1;
   color: var(--aw-text-primary);
-  margin-top: .4rem;
-  padding: 0 .15em .25em;
-}
-.hero__script::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 6%;
-  bottom: .12em;
-  height: .14em;
-  background: var(--aw-red);
-  border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1s var(--ease) .5s;
-}
-.is-ready .hero__script::after { transform: scaleX(1); }
-
-.hero__lead {
-  max-width: 46ch;
-  margin-top: 2rem;
-  font-size: clamp(1rem, 2.4vw, 1.2rem);
-  color: var(--aw-text-secondary);
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
-.hero__cue {
-  margin-top: clamp(2.5rem, 6vh, 4rem);
-  display: inline-flex;
+.welcome__controls {
+  margin-top: clamp(2rem, 4vh, 3rem);
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
   align-items: center;
-  gap: .65rem;
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--aw-text-muted);
 }
-.hero__cue .line {
-  width: 56px; height: 1px; background: var(--aw-border-strong);
-  position: relative; overflow: hidden;
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--aw-bg-surface);
+  border: 1px solid var(--aw-border);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--aw-text-secondary);
+  transition: all 0.3s var(--ease);
+  font-family: var(--font-ui);
 }
-.hero__cue .line::after {
-  content: ""; position: absolute; inset: 0;
+
+.lang-toggle:hover {
+  background: var(--aw-bg-hover);
+  border-color: var(--aw-text-primary);
+  color: var(--aw-text-primary);
+}
+
+.lang-indicator {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  transition: all 0.3s var(--ease);
+}
+
+.lang-indicator.active {
   background: var(--aw-text-primary);
-  transform: translateX(-100%);
-  animation: sweep 2.4s var(--ease) infinite;
+  color: var(--aw-bg-page);
 }
-@keyframes sweep { 50%, 100% { transform: translateX(100%); } }
+
+.lang-divider {
+  color: var(--aw-border-strong);
+}
 
 /* load-reveal */
 .reveal { opacity: 0; transform: translateY(18px); }
@@ -356,21 +348,31 @@ a:focus-visible, button:focus-visible {
 }
 .work__count { font-size: .82rem; color: var(--aw-text-muted); letter-spacing: .04em; }
 
-/* --- Project table (editorial index) --- */
+.work__content {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+/* --- Project table (modern table design) --- */
 .ptable {
   list-style: none;
   border-top: 1px solid var(--aw-border-strong);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .prow, .ptable__head {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr) 180px 88px 44px;
+  grid-template-columns: 50px minmax(0, 1fr) 140px 70px 40px;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .ptable__head {
-  padding: .9rem 0;
+  padding: 0.9rem 1rem;
+  background: var(--aw-bg-surface);
   border-bottom: 1px solid var(--aw-border);
   font-size: .7rem;
   font-weight: 700;
@@ -381,30 +383,36 @@ a:focus-visible, button:focus-visible {
 
 .prow {
   position: relative;
-  padding: clamp(1.1rem, 2.6vw, 1.9rem) 0;
+  padding: 0.9rem 1rem;
   border-bottom: 1px solid var(--aw-border);
   color: var(--aw-text-primary);
-  transition: opacity .4s var(--ease);
+  background: var(--aw-bg-base);
+  transition: all .3s var(--ease);
 }
-/* dim the rest of the table while one row is hovered */
-.ptable:hover .prow { opacity: .4; }
-.ptable .prow:hover { opacity: 1; }
+
+.prow:last-child { border-bottom: none; }
+
+.prow:hover {
+  background: var(--aw-bg-surface);
+  padding-left: 1.2rem;
+  padding-right: 0.8rem;
+}
 
 .prow .c-num {
   font-size: .82rem; font-weight: 700; letter-spacing: .12em;
   color: var(--aw-text-muted);
-  transition: color .35s var(--ease);
+  transition: color .3s var(--ease);
 }
 .prow:hover .c-num { color: var(--aw-red); }
 
 .prow .c-name {
   font-weight: 800;
-  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
   letter-spacing: -0.02em;
   line-height: 1.05;
-  transition: transform .4s var(--ease);
+  transition: transform .3s var(--ease);
 }
-.prow:hover .c-name { transform: translateX(10px); }
+.prow:hover .c-name { transform: translateX(8px); }
 
 .prow .c-cat { color: var(--aw-text-secondary); font-size: .95rem; font-weight: 500; }
 .prow .c-year { color: var(--aw-text-muted); font-size: .95rem; font-variant-numeric: tabular-nums; }
@@ -413,43 +421,39 @@ a:focus-visible, button:focus-visible {
   justify-self: end;
   font-size: 1.4rem; line-height: 1;
   color: var(--aw-text-muted);
-  transform: translate(-6px, 4px);
   opacity: 0;
-  transition: transform .4s var(--ease), opacity .4s var(--ease), color .4s var(--ease);
+  transform: translate(6px, 0);
+  transition: all .3s var(--ease);
 }
 .prow:hover .c-go { opacity: 1; transform: none; color: var(--aw-red); }
 
-/* --- Floating image preview that trails the cursor --- */
-.preview {
-  position: fixed;
-  top: 0; left: 0;
-  width: 280px; height: 210px;
-  pointer-events: none;
-  z-index: 60;
-  border-radius: 6px;
+/* --- Sidebar image preview --- */
+.work__preview {
+  position: sticky;
+  top: clamp(4rem, 10vh, 8rem);
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--aw-border-strong);
-  box-shadow: 0 30px 60px -22px rgba(26,26,24,.5);
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(.9);
-  transition: opacity .3s var(--ease);
-  will-change: transform;
+  box-shadow: 0 12px 32px -8px rgba(26,26,24,.12);
+  background: var(--aw-bg-surface);
 }
-.preview.is-on { opacity: 1; }
-.preview img { width: 100%; height: 100%; object-fit: cover; }
-
-/* --- Interactive cursor trail (canvas overlay) --- */
-.cursor-trail {
-  position: fixed;
-  inset: 0;
-  width: 100vw; height: 100vh;
-  pointer-events: none;
-  z-index: 9999;
+.work__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .3s var(--ease);
 }
 
 /* =============================================================
    Responsive
    ============================================================= */
+@media (max-width: 1024px) {
+  .work__content { grid-template-columns: 1fr; }
+  .work__preview { position: relative; top: auto; }
+}
+
 @media (max-width: 760px) {
   .about__grid { grid-template-columns: 1fr; }
   .about__photo { max-width: 420px; }
@@ -464,9 +468,9 @@ a:focus-visible, button:focus-visible {
   .prow:hover .c-name { transform: none; }
 }
 
-/* the cursor trail + preview are desktop pointer enhancements only */
+/* preview is desktop pointer enhancement only */
 @media (hover: none), (pointer: coarse) {
-  .cursor-trail, .preview { display: none !important; }
+  .preview { display: none !important; }
 }
 
 /* =============================================================
@@ -476,5 +480,4 @@ a:focus-visible, button:focus-visible {
   * { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
   .hero__script::after { transform: scaleX(1); }
-  .cursor-trail { display: none !important; }
 }

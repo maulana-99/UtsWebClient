@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Allura&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/cursor.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -29,25 +30,18 @@
     </div>
   </header>
 
-  <!-- ===== Hero ===== -->
+  <!-- ===== Welcome ===== -->
   <main>
-    <section class="hero container">
-      <p class="hero__eyebrow eyebrow reveal d1">Portfolio · Muhamad Ilham Maulana</p>
+    <section class="welcome">
+      <h1 class="welcome__text reveal d1" data-id="greeting">Selamat Datang</h1>
 
-      <h1 class="hero__title reveal d2">
-        Selamat<br />Datang<span class="dot">.</span>
-      </h1>
-
-      <p class="hero__script reveal d3">di ruang kreatif saya</p>
-
-      <p class="hero__lead reveal d4">
-        Tempat saya menaruh hal-hal yang saya rancang dan bangun — dari
-        antarmuka, identitas, sampai produk kecil yang rapi sampai detail.
-      </p>
-
-      <a class="hero__cue reveal d4" href="projects.html">
-        <span class="line"></span> Lihat karya
-      </a>
+      <div class="welcome__controls">
+        <button class="lang-toggle" aria-label="Toggle language">
+          <span class="lang-indicator" data-lang="id">ID</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-indicator" data-lang="en">EN</span>
+        </button>
+      </div>
     </section>
   </main>
 
