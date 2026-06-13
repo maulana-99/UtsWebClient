@@ -34,10 +34,10 @@
     trail[i] = { x: pointer.x, y: pointer.y, dx: 0, dy: 0 };
   }
 
-  window.addEventListener('click', function (e) { setPointer(e.pageX, e.pageY); });
+  window.addEventListener('click', function (e) { setPointer(e.clientX, e.clientY); });
   window.addEventListener('mousemove', function (e) {
     mouseMoved = true;
-    setPointer(e.pageX, e.pageY);
+    setPointer(e.clientX, e.clientY);
   });
 
   function setPointer(x, y) { pointer.x = x; pointer.y = y; }
