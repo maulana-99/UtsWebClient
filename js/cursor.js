@@ -1,14 +1,9 @@
-/* Interactive cursor trail.
-   Adapted from Ksenia Kondrashova's "satisfying cursor" tutorial:
-   https://dev.to/uuuuuulala/coding-an-interactive-and-damn-satisfying-cursor-7-simple-steps-2kb-of-code-1c8b
-   Branded to the site accent + guarded for touch / reduced-motion. */
 (function () {
   'use strict';
 
   var canvas = document.querySelector('canvas.cursor-trail');
   if (!canvas) return;
 
-  // Desktop pointers only, and respect reduced-motion.
   var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!fine || reduce) { canvas.style.display = 'none'; return; }
@@ -56,7 +51,6 @@
   window.requestAnimationFrame(update);
 
   function update(t) {
-    // gentle idle motion before the first mouse move
     if (!mouseMoved) {
       pointer.x = (0.5 + 0.3 * Math.cos(0.002 * t) * Math.sin(0.005 * t)) * window.innerWidth;
       pointer.y = (0.5 + 0.2 * Math.cos(0.005 * t) + 0.1 * Math.cos(0.01 * t)) * window.innerHeight;
