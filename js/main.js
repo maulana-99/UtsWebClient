@@ -1,4 +1,3 @@
-/* ilham — portfolio interactions */
 (function () {
   'use strict';
 
@@ -73,6 +72,15 @@
     ptable.querySelectorAll('.prow').forEach(function (row) {
       row.addEventListener('click', function (e) {
         e.preventDefault();
+
+        // Remove selected class dari semua rows
+        ptable.querySelectorAll('.prow').forEach(function (r) {
+          r.classList.remove('is-selected');
+        });
+
+        // Add selected class ke row yang diklik
+        row.classList.add('is-selected');
+
         var src = row.getAttribute('data-img');
         if (src) {
           previewImg.style.opacity = '0.7';
@@ -83,5 +91,11 @@
         }
       });
     });
+
+    // Set first row as selected by default
+    var firstRow = ptable.querySelector('.prow');
+    if (firstRow) {
+      firstRow.classList.add('is-selected');
+    }
   }
 })();
