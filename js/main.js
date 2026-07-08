@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-  // Mark page ready -> triggers load-reveal animations
   function ready() {
     requestAnimationFrame(function () {
       document.body.classList.add('is-ready');
@@ -10,7 +9,6 @@
   if (document.readyState === 'complete') ready();
   else window.addEventListener('load', ready);
 
-  // Navbar: add border/background once the user scrolls
   var nav = document.querySelector('.nav');
   if (nav) {
     var onScroll = function () {
@@ -20,9 +18,8 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // Highlight the current page in the navbar
   var here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  document.querySelectorAll('.nav__link').forEach(function (link) {
+  document.querySelectorAll('.nav-link').forEach(function (link) {
     var target = (link.getAttribute('href') || '').toLowerCase();
     if (target === here || (here === '' && target === 'index.html')) {
       link.classList.add('is-active');
@@ -30,7 +27,6 @@
     }
   });
 
-  // Welcome page: language switcher
   var greetingEl = document.querySelector('[data-id="greeting"]');
   var langToggle = document.querySelector('.lang-toggle');
 
@@ -64,7 +60,6 @@
     greetingEl.style.transition = 'opacity 0.2s var(--ease)';
   }
 
-  // Projects table: image preview sidebar with click-to-change
   var previewImg = document.getElementById('preview-img');
   var ptable = document.getElementById('ptable');
 
@@ -73,12 +68,10 @@
       row.addEventListener('click', function (e) {
         e.preventDefault();
 
-        // Remove selected class dari semua rows
         ptable.querySelectorAll('.prow').forEach(function (r) {
           r.classList.remove('is-selected');
         });
 
-        // Add selected class ke row yang diklik
         row.classList.add('is-selected');
 
         var src = row.getAttribute('data-img');
@@ -92,10 +85,25 @@
       });
     });
 
-    // Set first row as selected by default
     var firstRow = ptable.querySelector('.prow');
     if (firstRow) {
       firstRow.classList.add('is-selected');
     }
+  }
+
+  var contactForm = document.getElementById('contactForm');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      alert('Pesan berhasil dikirim!');
+      contactForm.reset();
+    });
   }
 })();

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — ilham</title>
+  <meta name="description" content="Hubungi Muhamad Ilham Maulana." />
+  <link rel="stylesheet" href="css/cursor.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas class="cursor-trail" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="ilham — beranda">ilham</a>
+      <nav aria-label="Utama">
+        <ul class="nav-links">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="projects.html">Project</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact container">
+      <div class="contact-head reveal d1">
+        <p class="eyebrow">Contact</p>
+        <h1 class="contact-title">Contact <span class="script">Me</span></h1>
+        <p class="contact-desc">
+          Ada project, kolaborasi, atau sekadar mau say hi? Isi form di bawah ini dan saya akan segera membalas.
+        </p>
+      </div>
+
+      <form class="contact-form reveal d2" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required minlength="3" placeholder="Nama lengkap kamu" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="nama@email.com" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{9,15}" inputmode="numeric" title="Nomor telepon harus berupa angka, 9-15 digit" placeholder="08xxxxxxxxxx" />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Pilih subject</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="Freelance Project">Freelance Project</option>
+              <option value="Internship">Internship</option>
+              <option value="General Question">General Question</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required minlength="10" rows="5" placeholder="Tulis pesan kamu di sini..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container foot-inner">
+      <span class="foot-mark">ilham</span>
+      <span class="foot-meta">© 2026 Muhamad Ilham Maulana — Dibuat dengan teliti.</span>
+    </div>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
